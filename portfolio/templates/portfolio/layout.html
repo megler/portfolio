@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+    <link href="{% static 'portfolio/styles/styles.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'portfolio/images/favicon.ico' %}"/>
+    <script src="https://kit.fontawesome.com/347d408513.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div id="layoutDefault">
+      <div id="layoutDefault_content">
+        <main>
+          <!-- Navbar-->
+          <nav class="navbar navbar-marketing navbar-expand-lg bg-light navbar-light">
+            <div class="container px-5">
+              <div class="icon-stack icon-stack-sm bg-green text-white mb-3 mx-1">
+                <a class="icon-links" href="https://github.com/megler">
+                  <i class="fa-sm fa-brands fa-github"></i>
+                </a>
+
+              </div>
+              <div class="icon-stack icon-stack-sm bg-blue text-white mb-3 mx-1">
+                <a class="icon-links" href="https://www.linkedin.com/in/marceia-egler-164abb213/">
+                  <i class="fa-sm fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i data-feather="menu"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-lg-5">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'portfolio:index' %}">Home</a>
+                  </li>
+                  <li class="nav-item dropdown dropdown-lg no-caret">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownPages" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Projects
+                      <i class="fas fa-chevron-right dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end me-lg-n20 me-xl-n15 animated--fade-in-up" aria-labelledby="navbarDropdownPages">
+                      <div class="row g-0 justify-content-center">
+                        <div class="col-lg-4 p-lg-6">
+                          <h6 class="dropdown-header text-primary">Featured</h6>
+                          <a class="dropdown-item" href="{% url 'portfolio:anf_about' %}">Amazon Niche Finder - SaaS</a>
+                          <a class="dropdown-item" href="{% url 'portfolio:twitter_about' %}">Twitter Clone</a>
+                          <a class="dropdown-item" href="{% url 'portfolio:auctions_about' %}">Accio Auctions Ecommerce</a>
+                          <a class="dropdown-item" href="{% url 'portfolio:blog_about' %}">change_blog Flask Demo</a>
+                          <div class="dropdown-divider border-0"></div>
+                        </div>
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-4 p-lg-6">
+                          <h6 class="dropdown-header text-primary">Small Projects</h6>
+                          <a class="dropdown-item" href="{% url 'portfolio:movies_about' %}">Movie Picker</a>
+                          <a class="dropdown-item" href="{% url 'portfolio:stocks_about' %}">Stock News Alerts</a>
+                          <a class="dropdown-item" href="{% url 'portfolio:zillow_about' %}">Zillow Scraper</a>
+                          <div class="dropdown-divider border-0 d-lg-none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown no-caret">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      About Me
+                      <i class="fas fa-chevron-right dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="navbarDropdownDocs">
+                      <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-ui-kit-pro/quickstart" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary me-4">
+                          <i data-feather="file-text"></i>
+                        </div>
+                        <div>
+                          <div class="small text-gray-500">Documentation</div>
+                          Resume
+                        </div>
+                      </a>
+                      <div class="dropdown-divider m-0"></div>
+                      <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-ui-kit-pro/quickstart" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary me-4">
+                          <i data-feather="file-text"></i>
+                        </div>
+                        <div>
+                          <div class="small text-gray-500">Documentation</div>
+                          LinkedIn
+                        </div>
+                      </a>
+                      <div class="dropdown-divider m-0"></div>
+                      <a class="dropdown-item py-3" href="https://github.com/megler/" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary me-4">
+                          <i data-feather="code"></i>
+                        </div>
+                        <div>
+                          <div class="small text-gray-500">Code</div>
+                          Github Repositories
+                        </div>
+                      </a>
+                      <div class="dropdown-divider m-0"></div>
+                      <a class="dropdown-item py-3" href="https://www.changeblog.info/" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary me-4">
+                          <i data-feather="book-open"></i>
+                        </div>
+                        <div>
+                          <div class="small text-gray-500">Blog</div>
+                          Personal Blog
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href='{% url "portfolio:contact" %}'>Contact Me</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          {% block body %}{% endblock %}
+          <div id="layoutDefault_footer">
+            <footer class="footer pt-10 pb-5 mt-auto bg-dark footer-dark">
+              <div class="container px-5">
+
+                <div class="row gx-5 align-items-center">
+                  <div class="col small text-center">Copyright &copy; Marceia.me 2022</div>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'portfolio/js/scripts.js' %}"></script>
+      </body>
+
+    </html>

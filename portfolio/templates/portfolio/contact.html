@@ -1,0 +1,51 @@
+{% extends "portfolio/layout.html" %}
+{% block title %}
+  Contact Me
+{% endblock %}
+
+{% block body %}
+
+  <section>
+    <div class="container mt-5">
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2>What to chat?</h2>
+          <p class="lead mb-0">Contact me and let's discuss next steps!</p>
+          <p class="mb-5">My LinkedIn and Resume (See 'About Me' in top menu) also contain my direct contact info.</p>
+        </div>
+      </div>
+
+      <div class="row pb-5 row justify-content-center">
+        <form class="col-md-6" method="post">
+          {% csrf_token %}
+          <div class="row gx-5 mb-4">
+            <div class="col-md-6">
+              <label class="text-dark mb-2" for="{{ form.your_name.id_for_label }}">Full name</label>
+              {{ form.your_name }}
+            </div>
+            <div class="col-md-6">
+              <label class="text-dark mb-2" for="{{ form.email.id_for_label }}">Email</label>
+              {{ form.email }}
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="text-dark mb-2" for="{{ form.message.id_for_label }}">Message</label>
+            {{ form.message }}
+          </div>
+          <div>{{ form.ghtd }}</div>
+          <div>{{ form.captcha }}</div>
+          <div class="text-center">
+            <button class="btn btn-primary mt-4" type="submit">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="svg-border-rounded text-dark">
+      <!-- Rounded SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+{% endblock body %}

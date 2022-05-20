@@ -1,0 +1,108 @@
+{% extends "portfolio/layout.html" %}
+{% block title %}
+  Project - Personal Blog
+{% endblock %}
+
+{% block body %}
+  <div id="layoutDefault">
+    <div id="layoutDefault_content">
+      <main>
+        <!-- Page Header-->
+        <header class="page-header-ui page-header-ui-dark bg-gradient-primary-to-secondary">
+          <div class="page-header-ui-content pt-10">
+            <div class="container px-5 text-center">
+              <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8">
+                  <h1 class="page-header-ui-title mb-3">Personal Blog</h1>
+                  <p class="page-header-ui-text">A Blog application using Flask and SQLAlchemy.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="svg-border-rounded text-white">
+            <!-- Rounded SVG Border-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+              <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+            </svg>
+          </div>
+        </header>
+        <section class="bg-white py-10">
+          <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+              <div class="col-lg-10">
+                <h2 class="mb-4">A quick overview</h2>
+                <p>A personal blog written in Flask. Blog topics vary. A demo of the backend/admin can be provided on request.
+                </p>
+                <div class="card bg-light shadow-none">
+                  <div class="card-body">
+                    <h6>Project Links</h6>
+                    <ul class="mb-0 icons">
+                      <li class="text-italic">Check out the demo:
+                        <a href="https://www.changeblog.info/">Personal Blog Demo (Server may take a moment to spin up. Please give a minute to load)</a>
+                      </li>
+                      <li class="text-italic">
+                        Check out the code:
+                        <a href="https://github.com/megler/Day67-69-RESTful-Blog">Github
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <hr class="my-5"/>
+                <h4 class="mb-4">
+                  <div class="icon-stack bg-primary text-white me-2">
+                    <i data-feather="arrow-right"></i>
+                  </div>
+                  This is what the blog will do
+                </h4>
+                <div class="card bg-light shadow-none">
+                  <div class="card-body">
+                    <h6>Features</h6>
+                    <ul class="mb-0">
+                      <li class="text-italic">
+                        RESTful API for all CRUD (Create, Read, Update, Delete) functions
+                      </li>
+                      <li class="text-italic">
+                        User Authentication
+                      </li>
+                      <li class="text-italic">
+                        Custom Flask Admin
+                      </li>
+                      <li class="text-italic">
+                        Relational SQL Database
+                      </li>
+                      <li class="text-italic">
+                        Flask Blueprints used to keep app clean and organized
+                      </li>
+                      <li class="text-italic">
+                        Posts are formatted using Markdown.
+                      </li>
+                      <li class="text-italic">
+                        Contextual error messages
+                      </li>
+                      <li class="text-italic">
+                        Comments Section (can be activated on request for demo purposes)
+                      </li>
+                      <li class="text-italic">
+                        Contact Form (can be activated on request for demo purposes)
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+                <hr class="my-5"/>
+
+              </div>
+            </div>
+          </div>
+          <div class="svg-border-rounded text-dark">
+            <!-- Rounded SVG Border-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+              <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+            </svg>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+{% endblock body%}

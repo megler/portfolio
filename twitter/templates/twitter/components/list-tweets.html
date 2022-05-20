@@ -1,0 +1,90 @@
+{% load app_tags %}
+<ol class="tweet-list">
+  {% for post in posts %}
+    <li class="tweet-card">
+      <div class="tweet-content">
+        <div class="tweet-header">
+          <span class="fullname">
+            <strong>{{post.author.first_name}}</strong>
+          </span>
+          {% if user.is_authenticated %}
+            <a href="{% url 'twitter:user_profile' pk=post.author.id %}">
+              <span class="username">@{{post.author.username}}</span></a>
+          {% else %}
+            <span class="username">@{{post.author.username}}</span>
+          {% endif %}
+          <span class="tweet-time">-
+            {{post.date_created}}</span>
+        </div>
+        <a>
+          <img class="tweet-card-avatar" src="{{ post.author|gravatar:50 }}" alt="">
+        </a>
+        <div class="tweet-text">
+          <p class="tweet-body" data-tweet="{{post.id}}" data-edited="{{post.id}}" lang="es" data-aria-label-part="0">{{post.post_body}}
+          </p>
+          <p>{% include "twitter/components/edit-tweet.html" %}</p>
+        </div>
+        <div class="tweet-footer">
+          <form class="like-form">
+            <a class="tweet-footer-btn">
+              <label for="like-button" class="btn pr-0">
+                <i id="heart-{{post.id}}" class="octicon octicon-heart liked " aria-hidden="true" data-value="{{post.id}}"></i>
+              </label>
+              <input type="submit" value="{{user.id}}" class="d-none"/>
+              {% for key, value in likes.items %}
+                {% if key == post.id %}
+                  <span id="id-{{post.id}}" class="like ml-0">{{ value }}</span>
+                {% endif %}
+              {% endfor %}
+            </a>
+            {% if user.is_authenticated and user == post.author %}
+              <a class="edit">
+                <i class="fa fa-pencil-square-o edit-tweet-icon" aria-hidden="true" data-user="{{post.author.id}}" data-id="{{post.id}}">Edit</i>
+              </a>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </li>
+    {% empty %}
+    <li>This user has no tweets to share at the moment.</li>
+  {% endfor %}
+</ol>
+<!--Pagination-->
+<nav aria-label=" Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if posts.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+      </li>
+    {% endif %}
+    {% for i in posts.paginator.page_range %}
+      {% if posts.number == i %}
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            {{ i }}
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+      {% else %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    {% if posts.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ posts.next_page_number }}">Next</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+<!--end of Pagination-->

@@ -1,0 +1,311 @@
+{% extends "portfolio/layout.html" %}
+{% block title %}
+  Marceia Egler - Python Software Developer
+{% endblock %}
+
+{% block body %}
+  <!-- Page Header-->
+  <header class="page-header-ui page-header-ui-light bg-white">
+    <div class="page-header-ui-content">
+      <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-xl-8 col-lg-10 text-center">
+            <div class="headshot--landscape"><img src="./static/portfolio/images/headshot2022.png"/></div>
+
+            <h1 class="page-header-ui-title">Marceia Egler - Python Developer</h1>
+            <p class="page-header-ui-text">I am a Python developer based in Orlando, Florida. I help convert ideas into meaningful and useful products. With a sharp eye for product evolution, I prioritize tasks, iterate and deliver.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="svg-border-rounded text-light">
+      <!-- Rounded SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </header>
+  <!-- Icon Section-->
+  <section class="bg-light py-10">
+    <div class="container px-5">
+      <div class="row gx-5 text-center">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <img class="icon-svg-middle" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"/>
+
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0 text-start">
+          <p>
+            Organizations are increasingly using the Python programming language to realize a host of objectives.
+          </p>
+          <p>
+            Companies today are using the language in multiple ways to execute a vast range of front and back-end processes across web development, machine learning, and various other disciplines.
+          </p>
+          <p>
+            With the ability to integrate Javascript for front-end interactivity, along with frameworks such as Django, Flask and others, the possibilities are endless.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <img class="icon-svg-middle" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
+
+        </div>
+      </div>
+    </div>
+    <div class="svg-border-rounded text-white">
+      <!-- Rounded SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </section>
+  <!-- Content Section-->
+  <section class="bg-white py-10">
+    <div class="container px-5">
+      <div class="row gx-5">
+        <div class="col-md-6 col-xl-4 mb-5 mt-n5">
+          <h2>Featured Projects</h2>
+        </div>
+      </div>
+      <div class="row gx-5">
+        {# Photo by Noelle Otto from Pexels: https://www.pexels.com/photo/close-up-photography-of-magnifying-glass-906055/ #}
+        <div class="col-md-6 col-xl-4 mb-5 mt-xl-n5">
+          <a class="card card-portfolio h-100" href="{% url 'portfolio:anf_about' %}">
+            <img class="card-img-top" src="./static/portfolio/images/pexels-noelle-otto-906055.jpg" alt="..."/>
+            <div class="card-body">
+              <div class="card-title">Amazon Niche Finder
+                <br><br>
+                <ul class="text-start">
+                  <li>Built with Django backend and Javascript Frontend</li>
+                  <li>Heroku production server</li>
+                  <li>Custom API with Django REST Framework</li>
+                  <li>Custom manage.py commands</li>
+                  <li>External API using FETCH</li>
+                  <li>Production Postgres database</li>
+                  <li>Modified Preordered Tree Traversal of 27k+ Amazon categories</li>
+                </ul>
+              </div>
+            </div>
+            <h3 class="text-center">Amazon Niche Finder - An Affiliate Marketing Research Tool</h3>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-xl-4 mb-5 mt-md-n5">
+          <a class="card card-portfolio h-100" href="{% url 'portfolio:twitter_about' %}">
+            {# Photo by Skyler Ewing: https://www.pexels.com/photo/eastern-bluebird-with-bright-plumage-on-stick-6719830/ #}
+            <img class="card-img-top" src="./static/portfolio/images/pexels-skyler-ewing-6719830.jpg" alt="..."/>
+            <div class="card-body">
+              <div class="card-title">Twitter Clone:
+                <br><br>
+                <ul class="text-start">
+                  <li>Built with Django backend and Javascript frontend</li>
+                  <li>Heroku production server</li>
+                  <li>User Authentication</li>
+                  <li>Custom backend admin</li>
+                  <li>Production Postgres database</li>
+                  <li>Custom user gravatars</li>
+                  <li>User specific views</li>
+                </ul>
+              </div>
+            </div>
+            <h3 class="text-center">Twitter Clone - Django/JS SPA App</h3>
+          </a>
+        </div>
+        {# Photo by RODNAE Productions: https://www.pexels.com/photo/wooden-sticks-on-white-wooden-table-7978779/ #}
+        <div class="col-md-6 col-xl-4 mb-5 mt-n5">
+          <a class="card card-portfolio h-100" href="{% url 'portfolio:auctions_about' %}">
+            <img class="card-img-top" src="./static/portfolio/images/pexels-rodnae-productions-7978779.jpg" alt="..."/>
+            <div class="card-body">
+              <div class="card-title">Ecommerce Demo:
+                <br><br>
+                <ul class="text-start">
+                  <li>Built on Django</li>
+                  <li>Heroku production server</li>
+                  <li>User Authentication</li>
+                  <li>Custom backend admin</li>
+                  <li>Production Postgres database</li>
+                  <li>Custom user gravatars</li>
+                  <li>User specific views</li>
+                </ul>
+              </div>
+            </div>
+            <h3 class="text-center">Accio Auctions - An Ecommerce Demo</h3>
+          </a>
+        </div>
+      </div>
+      <div class="row gx-5 d-flex justify-content-center mt-3">
+        {# Photo by Jessica Lewis Creative: https://www.pexels.com/photo/photo-of-phone-on-top-of-notebook-3361492/ #}
+        <div class="col-md-6 col-xl-4 mb-5 mt-xl-n5">
+          <a class="card card-portfolio h-100" href="{% url 'portfolio:blog_about' %}">
+            <img class="card-img-top" src="./static/portfolio/images/pexels-jessica-lewis-creative-3361492.jpg" alt="..."/>
+            <div class="card-body">
+              <div class="card-title">change_blog
+                <br><br>
+                <ul class="text-start">
+                  <li>Built on Flask</li>
+                  <li>Heroku production server</li>
+                  <li>User Authentication</li>
+                  <li>Production Postgres database</li>
+                  <li>Custom backend admin</li>
+                </ul>
+              </div>
+            </div>
+            <h3 class="text-center">change_blog - A Personal Blog Built With Flask</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="svg-border-rounded text-light">
+      <!-- Rounded SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </section>
+  <!-- Icon Section-->
+
+  <section class="bg-light py-10">
+    <div class="container px-5">
+      <div class="row gx-5 text-center">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="devicon-stack mb-4">
+            <img class="icon-svg px-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"/>
+            <img class="icon-svg px-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"/>
+          </div>
+          <h3>Databases</h3>
+          <p class="mb-0">My knowledge with these modern databases ensure I can develop your application with most commonly used full stacks that are Python and/or Javascript based.</p>
+        </div>
+        <div class="col-lg-4  mb-lg-0">
+          <div class="devicon-stack mb-4">
+            <img class="icon-svg px-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"/>
+            <img class="icon-svg px-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original-wordmark.svg"/>
+          </div>
+          <h3>Frameworks</h3>
+          <p class="mb-0">Whether you want a "batteries included" solution like Django or an "à la carte" alternative such as Flask, I can build the app and make it a reality.</p>
+        </div>
+        <div class="col-lg-4 mb-5">
+          <div class="devicon-stack mb-4">
+            <img class="icon-svg px-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"/>
+            <img class="icon-svg px-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"/>
+          </div>
+          <h3>Version Control</h3>
+          <p class="mb-0">As development environments have accelerated, version control systems help software teams work faster and smarter. By embracing version control, you can be confident my work is tested, saved and commited.</p>
+        </div>
+      </div>
+    </div>
+    <div class="svg-border-rounded text-white">
+      <!-- Rounded SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </section>
+  <!-- Content Section-->
+  <section class="bg-white py-10">
+    <div class="container px-5">
+      <div class="row gx-5">
+        <div class="col-md-6 col-xl-4 mb-5 mt-n5">
+          <h2>Small Projects and Code Challenges</h2>
+        </div>
+      </div>
+      <div class="row gx-5">
+        <div class="col-md-6 col-xl-4 mb-5 mt-n5">
+          <a class="card card-portfolio h-100" href="{% url 'portfolio:movies_about' %}">
+            <img class="card-img-top" src="./static/portfolio/images/pexels-pixabay-33129.jpg" alt="..."/>
+            <div class="card-body">
+              <div class="card-title">Movie Picker</div>
+            </div>
+            <h3 class="text-center">Movie Picker</h3>
+          </a>
+        </div>
+        {# Photo by Liza Summer: https://www.pexels.com/photo/crop-dealer-touching-screen-on-smartphone-with-trading-application-6347705/ #}
+        <div class="col-md-6 col-xl-4 mb-5 mt-md-n5">
+          <a class="card card-portfolio h-100" href="{% url 'portfolio:stocks_about' %}">
+            <img class="card-img-top" id="small-project2" src="./static/portfolio/images/pexels-liza-summer-6347705.jpg" alt="..."/>
+            <div class="card-body">
+              <div class="card-title">Stock News Alerts</div>
+            </div>
+            <h3 class="text-center">Stock News Alerts</h3>
+          </a>
+        </div>
+        {# Photo by Jessica Bryant: https://www.pexels.com/photo/assorted-color-wall-paint-house-photo-1370704/#}
+        <div class="col-md-6 col-xl-4 mb-5 mt-xl-n5">
+          <a class="card card-portfolio h-100" href="{% url 'portfolio:zillow_about' %}">
+            <img class="card-img-top" id="small-project3" src="./static/portfolio/images/pexels-jessica-bryant-1370704.jpg" alt="..."/>
+            <div class="card-body">
+              <div class="card-title">Zillow Scraper</div>
+            </div>
+            <h3 class="text-center">Zillow Scraper</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="svg-border-rounded text-light">
+      <!-- Rounded SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </section>
+  <!--Contact Section-->
+  <section class="bg-light py-10">
+    <div class="container px-5">
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2>Contact me</h2>
+          <div class="row gx-5">
+            <div class="col">
+              <a class="text-decoration-none" href="{% url 'portfolio:contact' %}">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon-stack icon-stack-lg bg-orange text-white mb-3">
+                      <i class="fa-lg fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="small">
+                      Email
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="text-decoration-none" href="https://www.linkedin.com/in/marceia-egler-164abb213/">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon-stack icon-stack-lg bg-blue text-white mb-3">
+                      <i class="fa-lg fa-brands fa-linkedin"></i>
+                    </div>
+                    <div class="small">
+                      LinkedIn
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="text-decoration-none" href="https://github.com/megler">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon-stack icon-stack-lg bg-green text-white mb-3">
+                      <i class="fa-lg fa-brands fa-github"></i>
+                    </div>
+                    <div class="small">
+                      GitHub
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="svg-border-rounded text-dark">
+      <!-- Rounded SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </section>
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "twitter/layout.html" %}
+
+{% block avatar %}
+  {% include "twitter/components/user-avatar.html" %}
+{% endblock avatar%}
+{% block left-sidebar %}
+  <!-- BEGIN Left column -->
+  <div class="col"></div>
+  <!-- END Left column -->
+{% endblock left-sidebar%}
+
+{% block body %}
+
+  <!-- BEGIN Center content column -->
+
+  <!-- Begin Send Tweet Box/Form -->
+  {% include "twitter/components/tweet-form.html" %}
+  <!-- END Tweet Box -->
+
+  <!-- BEGIN TWEET LIST-->
+  {% include "twitter/components/list-tweets.html" %}
+  <!-- END: TWEET LIST -->
+
+  <!-- END: Center content column -->
+{% endblock body%}
+
+{% block right-sidebar %}
+  <!-- BEGIN RIGHT SIDEBAR -->
+  <div class="col"></div>
+  <!-- END RIGHT SIDEBAR -->
+{% endblock right-sidebar%}

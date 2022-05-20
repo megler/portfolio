@@ -1,0 +1,31 @@
+{% load app_tags %}
+<div class="col right-col">
+  <div class="content-panel">
+    <div class="panel-header text-center">
+      <h4>Meet New Friends</h4>
+    </div>
+    <!-- Meet New Friends panel -->
+    <div class="panel-content">
+      <!--Follow list -->
+      <ol class="tweet-list">
+        {% for other_users in follow_suggestions %}
+          <li class="tweet-card">
+            <div class="tweet-content">
+              <img class="tweet-card-avatar" src="{{ other_users|gravatar:50 }}" alt="">
+              <div class="tweet-header">
+                <span class="profile-fullname">
+                  <strong>{{other_users.first_name}}</strong>
+                </span>
+                <p>
+                  <a href="{% url 'twitter:user_profile' pk=other_users.id %}">
+                    <span class="username">@{{other_users.username}}</span></a>
+                </p>
+
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+      <!--END: Follow list -->
+    </div>
+  </div>

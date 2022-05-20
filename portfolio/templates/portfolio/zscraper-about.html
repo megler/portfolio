@@ -1,0 +1,83 @@
+{% extends "portfolio/layout.html" %}
+{% block title %}
+  Project - Zillow Scraper
+{% endblock %}
+
+{% block body %}
+  <div id="layoutDefault">
+    <div id="layoutDefault_content">
+      <main>
+        <!-- Page Header-->
+        <header class="page-header-ui page-header-ui-dark bg-gradient-primary-to-secondary">
+          <div class="page-header-ui-content pt-10">
+            <div class="container px-5 text-center">
+              <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8">
+                  <h1 class="page-header-ui-title mb-3">Zillow Scraper</h1>
+                  <p class="page-header-ui-text">A Python web scraper focused on extracting Zillow information and adding to a Google Form for processing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="svg-border-rounded text-white">
+            <!-- Rounded SVG Border-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+              <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+            </svg>
+          </div>
+        </header>
+        <section class="bg-white py-10">
+          <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+              <div class="col-lg-10">
+                <h2 class="mb-4">A quick overview</h2>
+                <p>Given a set of parameters, scrape Zillow and fill out Google Form with gathered data. This project uses Beautiful Soup, Selenium and Google Forms.</p>
+                <div class="card bg-light shadow-none">
+                  <div class="card-body">
+                    <h6>Project Links</h6>
+                    <ul class="mb-0 icons">
+                      <li class="text-italic">
+                        Check out the code:
+                        <a href="https://github.com/megler/Day53-Zillow-Scraper-Capstone">Github
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <hr class="my-5"/>
+                <h4 class="mb-4">
+                  <div class="icon-stack bg-primary text-white me-2">
+                    <i data-feather="arrow-right"></i>
+                  </div>
+                  This is what Zillow Scraper will do
+                </h4>
+                <div class="card bg-light shadow-none">
+                  <div class="card-body">
+                    <h6>Features</h6>
+                    <p>Given a Zillow search URL containing desired search params (eg. price, location, etc), scrape all returned results and add them to a Google form.</p>
+                    <p>This allows a user to quickly gather a lot of information on a given area and import into the program of choice for data analysis. This project could be easily modified to import scraped data into a database or spreadsheet vs a Google Form.</p>
+                    <h6>This Tool Uses:</h6>
+                    <ul class="mb-0">
+                      <li class="text-italic">Beautiful Soup</li>
+                      <li class="text-italic">Selenium</li>
+                      <li class="text-italic">Google Forms</li>
+                    </ul>
+
+                  </div>
+                </div>
+                <hr class="my-5"/>
+
+              </div>
+            </div>
+          </div>
+          <div class="svg-border-rounded text-dark">
+            <!-- Rounded SVG Border-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="currentColor">
+              <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+            </svg>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+{% endblock body%}
