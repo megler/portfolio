@@ -20051,8 +20051,7 @@ section {
 }
 
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black] {
-  padding-bottom: 198.89807163%;
-  /* background-image: url("./img/device-mockups/iPhoneX/portrait.png"); */
+  padding-bottom: 198.89807163%;  
   z-index: initial;
 }
 
