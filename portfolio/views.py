@@ -1,7 +1,13 @@
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
-from django.core.mail import send_mail
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import From, To, Mail
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def index(request):
@@ -52,9 +58,22 @@ def contact(request):
             message = form.cleaned_data["message"]
             sender = form.cleaned_data["email"]
             human = True
-            recipients = ["marceia.egler@gmail.com"]
-            send_mail(subject, message, sender, recipients)
-            return redirect("thanks")
+
+            message = Mail(
+                from_email=From(sender, name),
+                to_emails=To(os.environ["SG_RECEIVER_EMAIL"], "Marceia"),
+                subject="Contact Form",
+                html_content=f"<strong>{message}</strong>",
+            )
+            try:
+                sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
+                response = sg.send(message)
+                print(response.status_code)
+                print(response.body)
+                print(response.headers)
+            except Exception as e:
+                print(e.message)
+            return redirect("portfolio:thanks")
     else:
         form = ContactForm()
 
