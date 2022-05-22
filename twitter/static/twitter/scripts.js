@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * @param {string} [user] is userid.
      */
   const likeFunction = (id, user) => {
-    fetch(`/network/like`, {
+    fetch(`/twitter/like`, {
       method: "POST",
       headers: {
         "X-CSRFToken": csrftoken
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let id = event.currentTarget.attributes.tweetID.value;
 
     const body = document.querySelector("#body-" + id).value;
-    fetch(`/network/edit-tweet`, {
+    fetch(`/twitter/edit-tweet`, {
       method: "POST",
       headers: {
         "X-CSRFToken": csrftoken
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // step 1 create text box
     editToggle(tweetID);
     // step 2 fill text box with tweet to be edited
-    fetch(`/network/get-tweet/${tweetID}`).then(response => response.json()).then(tweetRes => {
+    fetch(`/twitter/get-tweet/${tweetID}`).then(response => response.json()).then(tweetRes => {
       document.querySelector("#body-" + tweetID).value = tweetRes[0]["fields"]["post_body"];
     });
     // step 3 submit the new form

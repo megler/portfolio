@@ -1,3 +1,4 @@
+# pylint: disable=E1101
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
@@ -60,10 +61,10 @@ def contact(request):
             human = True
 
             message = Mail(
-                from_email=From(sender, name),
+                from_email=From(os.environ["SG_RECEIVER_EMAIL"], name),
                 to_emails=To(os.environ["SG_RECEIVER_EMAIL"], "Marceia"),
                 subject="Contact Form",
-                html_content=f"<strong>{message}</strong>",
+                html_content=f"Sender: {sender}<br /> Message: {message}",
             )
             try:
                 sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
@@ -72,7 +73,7 @@ def contact(request):
                 print(response.body)
                 print(response.headers)
             except Exception as e:
-                print(e.message)
+                print(e.to_dict)
             return redirect("portfolio:thanks")
     else:
         form = ContactForm()

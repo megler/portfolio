@@ -14,7 +14,7 @@ MDB_API_KEY = os.environ.get("MDB_API_KEY")
 
 def index(request):
 
-    all_movies = Movie.objects.filter().order_by("rating")
+    all_movies = Movie.objects.filter().order_by("-rating")
     return render(request, "movies/index.html", {"movies": all_movies})
 
 

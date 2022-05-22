@@ -5,13 +5,15 @@
   {# Template Credit: https://github.com/jvadillo/twitter-bootstrap #}
 
   <head>
-    <title>
-      {% block title %}Social Network{% endblock %}
-    </title>
+    <link rel="icon" type="image/x-icon" href="{% static 'twitter/images/favicon.ico' %}"/>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
     <link href="{% static 'twitter/styles.css' %}" rel="stylesheet">
+    <title>
+      {% block title %}Social Network{% endblock %}
+    </title>
+
   </head>
 
   <body>
