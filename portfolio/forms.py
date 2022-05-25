@@ -1,9 +1,7 @@
-from cProfile import label
-import email
-from unicodedata import name
 from django import forms
-from captcha.fields import CaptchaField
 from django.core.exceptions import ValidationError
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 
 
 class HoneypotField(forms.BooleanField):
@@ -39,4 +37,4 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea(
         attrs={"class": "form-control py-3"}))
     ghtd = HoneypotField()
-    captcha = CaptchaField()
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)

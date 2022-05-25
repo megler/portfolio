@@ -22,7 +22,6 @@ from twitter import urls as twitter_urls
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include(portfolio_urls)),
-    path("captcha", include("captcha.urls")),
     path("movies/", include(movies_urls)),
     path("twitter/", include(twitter_urls)),
 ]
